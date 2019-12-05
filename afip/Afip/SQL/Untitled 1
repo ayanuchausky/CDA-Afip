@@ -1,0 +1,30 @@
+CREATE TABLE usuarios (
+claveFiscal INT PRIMARY KEY);
+
+CREATE TABLE impuestos (
+ID_IMPUESTO INT AUTO_INCREMENT PRIMARY KEY,
+descripcion VARCHAR(100),
+fecha DATE
+);
+
+CREATE TABLE usuarioximpuesto (
+claveFiscal INT,
+ID_IMPUESTO INT,
+FOREIGN KEY(claveFiscal) REFERENCES usuarios(claveFiscal) ,
+FOREIGN KEY(ID_IMPUESTO) REFERENCES impuestos(ID_IMPUESTO)
+);
+
+INSERT INTO impuestos ( descripcion, fecha) VALUES('Impuesto a las ganancias','2019-01-01');
+INSERT INTO impuestos ( descripcion, fecha) VALUES('Impuesto al Valor Agregado','2019-02-01');
+INSERT INTO impuestos ( descripcion, fecha) VALUES('Impuesto a la Ganancia Minima Presunta','2019-03-01');
+INSERT INTO impuestos ( descripcion, fecha) VALUES('Impuesto a los Bienes Personales','2019-04-01');
+INSERT INTO impuestos ( descripcion, fecha) VALUES('Impuesto sobre los Debitos y Creditos Bancarios','2019-05-01');
+INSERT INTO impuestos ( descripcion, fecha) VALUES('Impuesto sobre los Ingresos Brutos','2019-06-01');
+INSERT INTO impuestos ( descripcion, fecha) VALUES('Impuesto al Sello','2019-07-01');
+INSERT INTO impuestos ( descripcion, fecha) VALUES('Impuesto a la Transferencia de Inmuebles','2019-08-01');
+
+
+INSERT INTO usuarios (claveFiscal) VALUES(11111111);
+INSERT INTO usuarios (claveFiscal) VALUES(22222222);
+INSERT INTO usuarios (claveFiscal) VALUES(33333333);
+INSERT INTO usuarios (claveFiscal) VALUES(44444444);
